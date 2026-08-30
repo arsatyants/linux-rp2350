@@ -1,0 +1,22 @@
+{
+  "arch": "riscv32",
+  "cpu": "generic-rv32",
+  "crt-objects-fallback": "false",
+  "data-layout": "e-m:e-p:32:32-i64:64-n32-S128",
+  "dynamic-linking": false,
+  "eh-frame-header": false,
+  "emit-debug-gdb-scripts": false,
+  "features": "+m,+a,+c",
+  "linker": "/home/arsatyants/pi-pico2-linux/buildroot/output/host/bin/riscv32-buildroot-linux-uclibc-gcc",
+  "linker-flavor": "gcc",
+  "llvm-abiname": "ilp32",
+  "llvm-target": "riscv32-unknown-linux-uclibc",
+  "max-atomic-width": 32,
+  "panic-strategy": "abort",
+  "relocation-model": "static",
+  "target-endian": "little",
+  "target-pointer-width": 32,
+  "vendor": "unknown",
+  "os": "linux",
+  "env": "uclibc"
+}

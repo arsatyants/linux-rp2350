@@ -2,3 +2,9 @@ package/pico2-bootloader/bootloader/build
 package/pico2-bootloader/bootloader/*.uf2
 package/pico2-bootloader/bootloader/*.bin
 package/pico2-bootloader/bootloader/demo/build
+
+# Generated user-app artifacts
+apps/*.gdb
+board/raspberrypi/raspberrypi-pico2/rootfs_overlay/usr/bin/
+
+# Buildroot output lives inside the submodule and is ignored there

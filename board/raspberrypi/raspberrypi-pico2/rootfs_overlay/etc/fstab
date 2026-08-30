@@ -1,0 +1,6 @@
+# <device> <mountpoint> <type> <options> <dump> <pass>
+# cramfs root is read-only; keep writable dirs in RAM (tmpfs).
+# JFFS2 on the flash data partition does not work because the kernel maps
+# the QSPI flash via phram/XIP as read-only.
+tmpfs /tmp     tmpfs rw,relatime,size=512k 0 0
+tmpfs /mnt/data tmpfs rw,relatime,size=1M 0 0

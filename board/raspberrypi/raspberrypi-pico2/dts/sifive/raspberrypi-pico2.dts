@@ -31,7 +31,12 @@
 				reg = <0x600000 0x200000>; /* ~2MB for cramfs at 6MB offset*/
 				read-only;
 			};
-		};
+
+			partition@800000 {
+				label = "data";
+				reg = <0x800000 0x400000>; /* 4MB writable JFFS2 at 8MB offset */
+			};
+			};
 	};
 
 	memory@11000000 {
