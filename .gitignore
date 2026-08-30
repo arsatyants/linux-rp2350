@@ -8,3 +8,4 @@ apps/*.gdb
 board/raspberrypi/raspberrypi-pico2/rootfs_overlay/usr/bin/
 
 # Buildroot output lives inside the submodule and is ignored there
+apps/hello
