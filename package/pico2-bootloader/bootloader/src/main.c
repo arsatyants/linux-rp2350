@@ -28,7 +28,11 @@
 #endif
 
 #define LED_PIN			2
-#define RP2350_XIP_CSI_PIN	19
+// PSRAM CS pin for Waveshare RP2350-PiZero (schematic net PSRAM_CS,
+// RP2350 QMI CS1, confirmed working via register-level bring-up test:
+// https://github.com/arsatyants/rp2350-pizero-psram-test).
+// Was 19 (SparkFun Pro Micro RP2350's wiring) upstream.
+#define RP2350_XIP_CSI_PIN	47
 
 #define PSRAM_LOCATION (0x11000000U)
 
