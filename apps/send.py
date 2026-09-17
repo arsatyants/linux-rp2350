@@ -3,16 +3,20 @@
 import argparse
 import serial
 import time
-import uu
-import io
+import binascii
 import sys
 
 
 def encode_to_uue(data: bytes, name: str = "app") -> str:
-    inbuf = io.BytesIO(data)
-    outbuf = io.BytesIO()
-    uu.encode(inbuf, outbuf, name=name, mode=0o755)
-    return outbuf.getvalue().decode("ascii")
+    # The stdlib `uu` module was removed in Python 3.13 (it was just a thin
+    # wrapper around binascii.b2a_uu/a2b_uu, which are still present).
+    lines = [f"begin 755 {name}"]
+    for i in range(0, len(data), 45):
+        chunk = data[i:i + 45]
+        lines.append(binascii.b2a_uu(chunk).decode("ascii").rstrip("\n"))
+    lines.append("`")
+    lines.append("end")
+    return "\n".join(lines) + "\n"
 
 
 def send(port: str, baud: int, binary_path: str, run: bool = True):

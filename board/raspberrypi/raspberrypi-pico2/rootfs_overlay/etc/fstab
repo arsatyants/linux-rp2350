@@ -4,3 +4,4 @@
 # the QSPI flash via phram/XIP as read-only.
 tmpfs /tmp     tmpfs rw,relatime,size=512k 0 0
 tmpfs /mnt/data tmpfs rw,relatime,size=1M 0 0
+tmpfs /run     tmpfs rw,relatime,size=256k 0 0
